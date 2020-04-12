@@ -1,7 +1,37 @@
 $(document).ready(function(){
     
+    $(document).scroll(function(){              //On scroll action button beheaviour
+        if($('html').scrollTop() > 500 ){      //Check if we 1000 px from the top
+            $('p').css({             //On last child of paragraph action opacity and scale
+                'transform': 'scale(1)',        //Prevent clicking on invisible element, make element very small
+                'opacity':1
+            });
+        }else{                                  //If scrolling on top, hide button
+            $('p').css({
+                'opacity':0,
+                'transform': 'scale(0)'
+            });
+        };
+    });
+    
+    $('p').click(function(){         //On click of button scroll to the top
+        $('html').animate({scrollTop:0},1000);  //Create smooth scroling to the top
+    });
+
     $('img').hover(function(){              // Make picture bigger when hovering
         $(this).toggleClass('imgHover');
+    });
+    
+    // Zoom image on click
+    $('img').click(function(){
+        console.log('clicked');
+        $(".modal").css('display', 'block');
+        $("#img01").attr('src', this.src);
+    });
+    
+    // Close big image
+    $('.close').click(function(){
+        $(".modal").css('display', 'none');
     });
 
 
