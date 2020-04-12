@@ -1,0 +1,85 @@
+h1{
+    text-align: center;
+}
+nav{
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-evenly;
+}
+h2{
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+h2:hover, .selected{
+    box-shadow: 15px 15px 7px rgba(222, 222, 222, 0.85);
+    color: red;
+}
+
+#wraper{
+    overflow: hidden;
+    line-height: 0;
+}
+img{
+    width: 32vw;
+    height: 32vw;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+.imgHover{
+    transform: scale(1.2);
+    
+}
+.doNotDisplay{
+    display: none;
+}
+.all{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "travel1 cycling1 pets3"
+                        "cycling2 pets4 travel6"
+                        "pets5 travel8 cycling3"
+                        "travel5 travel3 pets2"
+                        "travel7 pets6 travel2"
+                        "travel4 pets1 cycling4";
+}
+.travelWraper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "travel1 travel2 travel3" "travel4 travel5 travel6" "travel7 travel8 .";
+}
+.petsWraper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "pets1 pets2 pets3" "pets4 pets5 pets6";
+}
+.cyclingWraper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "cycling1 cycling2 cycling3" "cycling4 . .";
+}
+
+.travel, .pets, .cycling{
+    transition: all ease 1s;
+    overflow: hidden;
+}
+#travel1{grid-area: travel1;}
+#travel2{grid-area: travel2;}
+#travel3{grid-area: travel3;}
+#travel4{grid-area: travel4;}
+#travel5{grid-area: travel5;}
+#travel6{grid-area: travel6;}
+#travel7{grid-area: travel7;}
+#travel8{grid-area: travel8;}
+
+
+#pets1{grid-area: pets1;}
+#pets2{grid-area: pets2;}
+#pets3{grid-area: pets3;}
+#pets4{grid-area: pets4;}
+#pets5{grid-area: pets5;}
+#pets6{grid-area: pets6;}
+
+#cycling1{grid-area: cycling1;}
+#cycling2{grid-area: cycling2;}
+#cycling3{grid-area: cycling3;}
+#cycling4{grid-area: cycling4;}
